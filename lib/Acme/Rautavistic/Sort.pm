@@ -1,28 +1,30 @@
-class Acme::Rautavistic::Sort:ver<0.0.1>;
-# ABSTRACT: Rautavistic sort functions
+class Acme::Rautavistic::Sort:ver<0.0.1> {
+    # ABSTRACT: Rautavistic sort functions
 
-sub dropsort (@args) {
+    sub dropsort (@args) {
         my $last;
-        map { $_ ge $last ? $last = $_ : () } @_;
-}
+        map { $_ ge $last ?? $last = $_ !! () } @args;
+    }
 
-# sub dropsortx(&@)
-# {
-#         # magic variables $a and $b
-#         use vars qw($a $b);
-#         no strict 'refs';
-#         no warnings 'uninitialized';
-#         my $caller = caller;
-#         local(*{$caller."::a"}) = \my $a;
-#         local(*{$caller."::b"}) = \my $b;
-#         my $comparator = shift;
-#         my $last;
-#         map {
-#              $a = $_;
-#              $b = $last;
-#              $comparator->() >= 0 ? $last = $_ : ()
-#             } @_;
-# }
+    # sub dropsortx(&@)
+    # {
+    #         # magic variables $a and $b
+    #         use vars qw($a $b);
+    #         no strict 'refs';
+    #         no warnings 'uninitialized';
+    #         my $caller = caller;
+    #         local(*{$caller."::a"}) = \my $a;
+    #         local(*{$caller."::b"}) = \my $b;
+    #         my $comparator = shift;
+    #         my $last;
+    #         map {
+    #              $a = $_;
+    #              $b = $last;
+    #              $comparator->() >= 0 ? $last = $_ : ()
+    #             } @_;
+    # }
+
+}
 
 1; # End of Acme::Rautavistic::Sort
 
