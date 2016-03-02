@@ -27,8 +27,6 @@ class Acme::Rautavistic::Sort:ver<0.0.1> {
 
 }
 
-1; # End of Acme::Rautavistic::Sort
-
 =begin pod
 
 =encoding UTF-8
