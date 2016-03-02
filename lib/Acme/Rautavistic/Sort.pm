@@ -1,9 +1,10 @@
-class Acme::Rautavistic::Sort:ver<0.0.1> {
-    # ABSTRACT: Rautavistic sort functions
+# ABSTRACT: Rautavistic sort functions
 
-    sub dropsort (@args) {
+class Acme::Rautavistic::Sort:ver<0.0.1> {
+
+    sub dropsort (@args) is export {
         my $last;
-        map { $_ ge $last ?? $last = $_ !! () } @args;
+        map { $_ ge $last ?? ($last = $_) !! () }, @args;
     }
 
     # sub dropsortx(&@)
@@ -28,9 +29,7 @@ class Acme::Rautavistic::Sort:ver<0.0.1> {
 
 1; # End of Acme::Rautavistic::Sort
 
-__END__
-
-=pod
+=begin pod
 
 =encoding UTF-8
 
@@ -132,9 +131,9 @@ Steffen Schwigon <ss5@renormalist.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Steffen Schwigon.
+This software is copyright (c) 2016 by Steffen Schwigon.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+the Artistic License 2.0.
 
-=cut
+=end pod
